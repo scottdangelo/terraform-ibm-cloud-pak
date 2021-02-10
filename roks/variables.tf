@@ -8,13 +8,15 @@ variable "enable" {
 
 variable "on_vpc" {
   type        = bool
-  default     = true
+  default     = false
   description = "if true the ROKS cluster will be created in IBM Cloud VPC, otherwise will be Classic"
 }
 
 variable "project_name" {
+  default     = "iaf"
   description = "The project name is used to name the cluster with the environment name"
 }
+
 variable "owner" {
   description = "Use your user name or team name. The owner is used to label the cluster and other resources"
 }
@@ -30,7 +32,7 @@ variable "resource_group" {
 }
 
 variable "roks_version" {
-  default     = "4.5"
+  default     = "4.6"
   description = "List available versions: ibmcloud ks versions"
 }
 
@@ -63,19 +65,19 @@ variable "roks_version" {
 
 variable "flavors" {
   type        = list(string)
-  default     = ["mx2.4x32"]
+  default     = ["b3c.16x64"]
   description = "Array with the flavors or machine types of each the workers group. Classic only takes the first flavor of the list. List all flavors for each zone with: 'ibmcloud ks flavors --zone us-south-1 --provider vpc-gen2'. Example: ['mx2.4x32', 'mx2.8x64', 'cx2.4x8']"
 }
 
 variable "workers_count" {
   type        = list(number)
-  default     = [2]
+  default     = [4]
   description = "Array with the amount of workers on each workers group. Classic only takes the first number of the list. Example: [1, 3, 5]"
 }
 
 variable "force_delete_storage" {
   type        = bool
-  default     = false
+  default     = true
   description = "If set to true, force the removal of persistent storage associated with the cluster during cluster deletion. Default value is false"
 }
 
