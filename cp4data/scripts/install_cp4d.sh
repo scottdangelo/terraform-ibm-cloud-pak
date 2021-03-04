@@ -98,8 +98,11 @@ while [[ -z "$POD" ]]; do
   echo "Waiting ${POD} to start.."
   sleep 2
 done
-echo "${POD} started"
-    
+
+echo "${POD} started - test"
+# Waiting for pod to begin its setup otherwise it hounds the logs in the next for loop
+sleep 300
+
 echo "Installation Started..."
 # Each retry is 10 seconds   
 for ((retry=0;retry<=9999;retry++)); do
