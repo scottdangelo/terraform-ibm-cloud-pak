@@ -1,0 +1,79 @@
+apiVersion: operator.ibm.com/v3
+kind: CommonService
+metadata:
+  name: common-service
+  namespace: ibm-common-services
+spec:
+  size: small
+  services:
+  - name: ibm-cert-manager-operator
+    spec:
+      certManager:
+        certManagerCAInjector:
+          resources:
+            limits:
+              cpu: 35m
+              memory: 520Mi
+            requests:
+              cpu: 30m
+              memory: 350Mi
+        certManagerController:
+          resources:
+            limits:
+              cpu: 80m
+              memory: 530Mi
+            requests:
+              cpu: 70m
+              memory: 390Mi
+        certManagerWebhook:
+          resources:
+            limits:
+              cpu: 60m
+              memory: 100Mi
+            requests:
+              cpu: 50m
+              memory: 90Mi
+        configMapWatcher:
+          resources:
+            limits:
+              cpu: 10m
+              memory: 60Mi
+            requests:
+              cpu: 10m
+              memory: 60Mi
+  - name: ibm-mongodb-operator
+    spec:
+      mongoDB:
+        replicas: 3
+        resources:
+          limits:
+            cpu: 300m
+            memory: 1Gi
+          requests:
+            cpu: 300m
+            memory: 1Gi
+  - name: ibm-iam-operator
+    spec:
+      secretwatcher:
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 220Mi
+          requests:
+            cpu: 30m
+            memory: 220Mi
+        replicas: 1
+  - name: ibm-metering-operator
+    spec:
+      meteringReportServer:
+        reportServer:
+          resources:
+            limits:
+              memory: 90Mi
+  - name: ibm-management-ingress-operator
+    spec:
+      managementIngress:
+        resources:
+          limits:
+            memory: 760Mi
+            

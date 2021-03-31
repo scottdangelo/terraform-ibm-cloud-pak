@@ -1,0 +1,5 @@
+inventory:
+  metadata:
+    name: ibmSecurityFoundations
+    description: IBM Cloud Pak for Security - Shared Operators & Infrastructural Services
+  k8sScope: cluster

@@ -1,0 +1,20 @@
+resources:
+  metadata:
+    name: installProduct
+  resourceDefs:
+    files:
+    - mediaType: application/vnd.case.resource.script.bash.v1+launcher
+      ref: launch.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: support/airgap.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: support/validate.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: support/usage.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: support/uninstall.sh
+    - ref: values.conf
+    - ref: olm/catalog_source.yaml
+    - ref: cases_images.yaml
+    - ref: cases-cr.yaml
+    - ref: connectors/connector-cr.yaml

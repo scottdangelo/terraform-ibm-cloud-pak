@@ -1,0 +1,15 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: ibm-cloud-databases-redis-operator-subscription
+spec:
+  config:
+    env:
+    - name: REGISTRY_SECRET
+      value: ibm-entitlement-key
+  channel: v1.0
+  installPlanApproval: Automatic
+  name: ibm-cloud-databases-redis-operator
+  source: REPLACE_SOURCE
+  sourceNamespace: openshift-marketplace
+  startingCSV: ibm-cloud-databases-redis.v1.0.0

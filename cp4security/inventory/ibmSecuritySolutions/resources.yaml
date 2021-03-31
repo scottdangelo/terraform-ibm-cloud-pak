@@ -1,0 +1,940 @@
+resources:
+  resourceDefs:
+    containerImages:
+    - digest: sha256:2e55f2aa14bcf945bb04105d8faf8033e3a38242681060b6c1799c9cc920cbed
+      image: elasticsearch-oss
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: docker.elastic.co/elasticsearch
+      tag: 6.8.9
+    - digest: sha256:45a350a4d70735f25cca3387a373f38d72eeaae273941c08dc242ea1b93cc89a
+      image: isc-file2redis
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:427f5a4af7a5011a1f9c4b0918e02bf80f847d08a5a644dcc5794e68bc536ace
+      image: isc-forensic-investigation
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:a4b954d43053edf0a694583cff9a105c645e6751e403393e895275c58df950de
+      image: isc-forensic-classification
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:63e910b4175bb72d60cee585752d21049fb4b5bbbfe91fed01f6b13fdbab1ad5
+      image: stix_shifter_modules_cbcloud
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:60e79a09a04a388b3ca4e6cc031b95b1a778832af8739e2177bb5779ee32759e
+      image: stix_shifter_modules_aws_athena
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:bc0e4aa155fe2055636e7bbe41561124e6c8b3dd021f6724e2cf44fdae22298a
+      image: isc-udi-encrypt-cronjob
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:bc0e4aa155fe2055636e7bbe41561124e6c8b3dd021f6724e2cf44fdae22298a
+      image: isc-udi-changelog-cronjob
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:10a2e1ae1a7f00611101c17ea12e279919a66b4f661aa5d63a7911312f5c146f
+      image: isc-threat-inv-worker
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:1706374da6540bc068f3b401fb0f22c04e3d95469ac3fe5f954454bd0edac38d
+      image: isc-threat-inv-scheduler
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:e4c92b3b089cd0ca2b5f12602549c83d635b0aef042053d3ec6cd2a9904cda7c
+      image: isc-threat-inv-ui
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:10edb1c8fec414bed85c23ecc07a311361a57764a201f0a0f30474c35485d069
+      image: isc-threat-inv-api
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:e5ae83bd41f40ad2eff91f9bb0172862d03ae850485e2d17c21f47127ab4c3c3
+      image: crunchy-postgres10-ha
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:ed923bbee4efe0e718f3c4774a35b1b30362b1c416ef43e50beb4f19522902ce
+      image: cp-serviceability
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: docker.io/ibmcom
+      tag: latest
+    - digest: sha256:0672d462945da6f0a55904e833f054266d3499d20b198f6f9672e77c46e1c97f
+      image: isc-tis-cortex
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:15575bd515c3acf449615366a2e445ac185f1733de377141cea77a8c355e1670
+      image: isc-tis-enrich-queue
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:c15100f2558ede6aa4e7e12d41370d7502f2b3db8b4364215fe1e33c177e68f4
+      image: isc-tis-connector-manager
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:697334f978a5aaed04853244527c0f8d9071727b6a145529cdf2955bfe58e815
+      image: isc-car-connector-drm
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:b27038b217988b70fb8005adf8c4bf21c19c8e7aaceaef3141d730a12e1af937
+      image: idrmintex
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:684351cfdbd97e71bde79b29c408bafc231bd6f7eb86e55cb654635cf0057968
+      image: idrmpostgres
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:fb211e29903d7cdf777c29a1b3f9d15cb77d24fff7c6d697857e4d148c74ddaf
+      image: idrmingestion
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:90a4900b03f2b9948ab3695d664da0d2f28d83dcef0392fe40653a94624a9525
+      image: idrmrisk
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:0423ba65c9df83ae23ca799690d29ff9264898cd72da66f70032d80879018a05
+      image: idrmnode
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:fac1ce3016b5c735e55b9d89a91f80ad252cf9b552bde05bfd06b3a007434517
+      image: idrmdashboard
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:ed521d53b1b2b194278d71563537e8ed741748b1c67f42fbe15c6f21c62d3fe3
+      image: cp4s-backup-restore
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:daa01873528e393c29aa9215e36efbc19a162d2557fd57c0318d540188213e0d
+      image: isc-run-thl
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:be70a7819e46ef5daf7576c0095f4005beed1ac84bc2266eb6fab94ac67567de
+      image: isc-common-xfeplus-coordinator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:0c3119cffa889cee4798683431332e6ca827219c276be3c2cf9b8c8e53c84b73
+      image: isc-udi-analyzer
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:e9724e2ace46de1df385d8322ecf6452b21ca5ce3cee1e8439106fe7895a5f43
+      image: apps-manager
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:e00c2a502fe02458aeb908ea43afc43c036753f5d6b0d96cee70866227175bf8
+      image: command-interpreter
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:b960df157b34e043aa409c537355b04e1a46c261577ce87041ca4820941fea3c
+      image: isc-car-connector-guardium
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:765b46b416177ad4340b15c49f9fc4b29e95741fb94c8542b0598aa73e393209
+      image: isc-car-connector-iam
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:d2ab2fcba5f6f839f3fae26625a8b77f8b384b357a4965dcb8a9f5e76c99f7aa
+      image: isc-udi-endpoint
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:3582435b3e257b0d1a512a7a2fcd10134f20545a8a6d12a77b7642f396e79c4a
+      image: isc-udi-worker
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:1c215c60c107b9009cbfd8495f436859cd894917382c1d345142be9b3817e458
+      image: homer-qproxy
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:c6c55081c5cb989b9b21a1ef999f1ea3f474e5d2ee6517d9e1611384dcb043d1
+      image: stix_shifter_modules_qradar
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:7bc366ab1c9d560052e37d80ce74ab7caa28d7f6a27d501ddf455d765e13973c
+      image: stix_shifter_modules_aws_cloud_watch_logs
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:4e55fec3fe97a3905fa15449a26aed0ac25093d4d4e2417ebc5991de023d1fd2
+      image: stix_shifter_modules_security_advisor
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:a7af8a0b89aa74fe2444a02ac76d5aa8236af7130be3ae6602dc56341744d22f
+      image: stix_shifter_modules_azure_sentinel
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:528720bb4dbcf96e8960ccb1aaca397743959a4492215e016a3c8c9640937f3e
+      image: stix_shifter_modules_elastic_ecs
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:ddbe6c6bb2a5fb131244bc61d4998aa904f01cf344df6f943fbc17c0f636591a
+      image: stix_shifter_modules_splunk
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:79b9071772b2204e4233584cd801c09e2323ac8e8c5104b9e58d1d74b65d8322
+      image: stix_shifter_modules_guardium
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:258412ba25842855064a189d1e072bbc24ce3a451cd6e0d558d5da9870733fcc
+      image: stix_shifter_modules_carbonblack
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:97bdc584e974a7bb3abf6082a61bf5232424504f46e776c5423748b70b18d9ff
+      image: stix_shifter_modules_bigfix
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:6fb9fc64705cad68140be92e6551ce550e573caa76e72d78e3f6c47a7384336b
+      image: stix_shifter_modules_stix_bundle
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:8ab42d241374336b04ddb831fc47ae70e3c6ff5f6f291fdaee8e8c986c800090
+      image: stix_shifter_modules_arcsight
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:dba0c5e90d72d85bc49aa7b57dff229bed03cfdf882f658f5c4cc509179e6e57
+      image: postgres-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:94199b494869cd63e5ecb95b7539f7e0c588b97ac4b7e5a0c0d4519203727032
+      image: pgo-backrest-restore
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:323fb0f44d118debbcd3e82f80679cfc7895cdb429c4e400db8a12ae16fc2183
+      image: pgo-backrest-repo
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:10a6c5d729df2df40fcc7f4a1835989b50fd72475c83446d1a90df55d89c9973
+      image: crunchy-postgres96-ha
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:c21d0bb8284c4f4c3fd655af58dce5d83edb9ca8ae953c900a7378851413123a
+      image: pgo-scheduler
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:ee128b45669a6a51945e7f7fe24304f60b8830b18ac2df46042f2bc7d633eb7d
+      image: pgo-rmdata
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:4c6bdd87fb1a6cf47e43805d42ac767768256c759b484dc4a309e02bafc17aa6
+      image: pgo-backrest
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:d9cae398f4ed0612a501342bc340a64f871c53ecddbcf062131176dd6d063043
+      image: pgo-event
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:aa13e4e3c13f1b9d8d098cbd05fa2a8ee32d9b61a3ef5200be05b67a248c86a2
+      image: pgo-apiserver
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:e9f4d36d5e969d1fa8e6c7977faecc286ea134786e7de14cff1a35d8f57840b2
+      image: isc-common-xfeplus-settings
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:14924ef8cb3c0292db96a546b507a257e7eab649ff209de7ccefff3a6e8b57e6
+      image: isc-common-configstore
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:b536f3c5cff5451a1ddba09d6fe454d451122b219c4eccbfeb588ae64bb3cde0
+      image: isc-common-xfeplus-xfe-proxy
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:5606753a4ae13c3becca313144d654d501addffc03bf06ddff9687a8c8ca4111
+      image: isc-cases-logging-sidecar
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:5dbc6981e52de61d857b82bafd963f5416f7266e040aeb277188ad4dae9f2cfb
+      image: openldap
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: docker.io/osixia
+      tag: 1.1.10
+    - digest: sha256:4b6ad3a68d34da29bf7c8ccb5d355ba8b4babcad1f99798204e7abb43e54ee3d
+      image: busybox
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: docker.io/library
+      tag: 1.30.1
+    - digest: sha256:5931fed20872062910d49bb7bf50a63bf7450b20b70029d739f3bf9b3de50aef
+      image: isc-car
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:b39763fcb34ca97bc0a6a9ece19d88fc855eace86da00fe872c3bb7e88da301b
+      image: arangodb-community
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:8b0c7056adc3c4d95583910e852acd1fa7d1f5a8429a5e50302937f24aaf0829
+      image: isc-cases-resutil
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:da9e6477664dc57bace994eb9e73ac84cf17e2dbeed681f7507b375a786b0e85
+      image: isc-car-connector-atp
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:6f69ff89dec52bb692125d98c774d7b6171c913b305acb10d410b37611ef4631
+      image: isc-investigate-backend
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:fc10865ce53649cf7fb3c2ee15edfa04b4d7c7f01d20abfb1d1d8134772a2a8a
+      image: isc-cases-database-init
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:a444161cdbcdb2f926cc7feab2e1afdb833af4f2682495db6f3ea24195a74fe2
+      image: isc-uds2file
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:9d7539b34bb9d71c0d62e1f94800091ef8346f75fe53646ebadf8ea82f86d780
+      image: isc-entitlements
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:a94a5aef7b5d333bb9dba4e24c604ddb1bbcf513cb740f8f6dd526befa0b497e
+      image: isc-cases-activemq
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:3c28511b8173df7764f07e37fcb152e9d7bcf94d074f2ee441b7b10c5ae91e42
+      image: isc-tis-user-registration
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:47fdc7f098bb0a7ec1977534f0b3db22e76ea3eedae5aa212f4413a69dc256e3
+      image: isc-authsvc
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:c5a54c0fe06476a8dfc88a1668cbd1745b9bae3f75c723f070fa71f1aeee1875
+      image: isc-common-console
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:2398f3a6fe2dd765ae40c611d18e701ad19834a4929110f79e8829ef7d1457da
+      image: isc-tis-score-controller
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:0df26f8458088d6ccc678ca5317686496a83cbd3bc601da51f0c4d249af5c563
+      image: isc-common-xfeplus-threat-intelligence-app
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:528a2dedcc9a44da5f9a883fddcb0f8096a629f729d949baf352bf85a2b98c05
+      image: isc-common-shell
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:fb6a54f43aa9f7eb200daea61a040ba16eefae4bd78a47cd8ce65b86bbca0336
+      image: isc-postgresql-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:756db8666c894b157d0c777d1548f8bd1829e3dc7401e958276f48f81d82e3e4
+      image: isc-car-connector-tenable
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:2ca4479ef4c8271577e1530ab186815c1c2c75efb3636f39adfd28fe912977a7
+      image: isc-common-xfeplus-reports
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:9d33fdb3c947e367322a58e011c0a9655b22023e22b41b298ceeec6b076ea7a6
+      image: arangodb-exporter
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:f7956cc0867eed2f2d4ae3224240e39d6077d4b05d75eb915013ef4b89ac1ac2
+      image: isc-car-connector-aws
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:f3ef636a09eeab69ea51edd2ca98233bc02cec1e69d04ec5600dea49442a7825
+      image: isc-car-connector-azure
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:40385a378bc52cfdbe448ec67acd1ce5af916f6f974f0d2ea08f4ed87393eef7
+      image: isc-aitk-orchestrator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:7eb6fea71ca46a309b568481e6add8066551bfef1c1d4fa1eaeecee8fc0df38c
+      image: isc-cases-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:3ac6c363737af21ffc270984b344d0a0c33a5f23074fc02fd818de19d702aa19
+      image: isc-common-xfeplus-profileservice-ocp
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:f13203d6f1eb79b0aa3ce7777e092b01d8ca09c5e92cf6c2e783a4212ee0574f
+      image: isc-tis-rfi
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:d43dd17c20bb4ba4c72612c7ec4426b67314ca4436b33da9ccdd9197cb1fa4dc
+      image: cp4s-car-frontend-ui
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:031466ffb1f8dc69fe156a157b015245123e999592ac9b573f09c81543172c48
+      image: isc-common-xfeplus-threat-cards
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:f988c6a7d774e8454642c8bc465c33ee19944b684298b08e58b4f84e9394d011
+      image: pulse-dashboard
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:7edd2fafa4fbc60e5925a403553a9c509798da0ad76b9c8b82e4869c422a71fa
+      image: isc-settings-datasources
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:6456ac2b940bad83339ec11a560f12e0f49193da973f4838beb55f27f3478c77
+      image: isc-cases-application
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:3a91abeb4876073c1fb93530fc5ddcd34aa4bf1fa731e6a12aa6ecb6fb174b84
+      image: isc-cases-activemq-logging-sidecar
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:09562d8647d7311b6686207ee71178c7ee4cb51833fc9c1dd802b82d6cf3afa2
+      image: isc-common-auth
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:31a48c69165b7a228337a375fcc826f33066226f4e6e09367207b6fa93d2f055
+      image: cp4s-car-connector-config
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:5f76c0f1f97ba354622b1bb7a5f765a19ec660de4923d0ac305f59a338c8196c
+      image: isc-tis-coordinator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:efda19d2f5b5f44d917c59b43dcb04e84cb1b186ee8660dc655e25983513317e
+      image: isc-tis-aia
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:fdf893f65988b62b683f2d45990e15b10c0a3c3083329f56ff7649f9204bd850
+      image: isc-csaadapter
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:ddbe526c7eec3878ff25cf2cae2a6d8f1c1a2b67c7c539f81c9067099369a8b7
+      image: isc-investigate-webui
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:635b8cb1ba1f48bca2776c7ee4232444f3881eac1c819e8268b4698922d860f6
+      image: isc-tis-data-gateway
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:984e697ea5bf311555ceab362939504758356ef4cab39d7c33e640594d2a64a0
+      image: isc-cases-database-upgrade
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:9905691a40a9aaade1b24e6a4daeefb0d57ae3e7feb1bfb52db4bdf2029b3a19
+      image: isc-common-xfeplus-search-service
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:da48cebc87ca3f99edb0db43626a451cf52f199685e7d35747603b29ded1f208
+      image: isc-de-feature-analysis
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    - digest: sha256:71042b0eb68b5334f606a91dd6ac276ade4e163c3a23066486eb44aab982aca3
+      image: isc-cases-scripting
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/solutions
+      tag: 1.6.0.0-amd64
+    helmCharts:
+    - chart: ibm-security-solutions-prod
+      mediaType: application/vnd.case.resource.helm.chart.v2
+      metadata:
+        description: The IBM Security Solutions Prod CASE is the solutions Cases Operator
+          and microservices for the IBM Cloud Pak For Security
+        name: ibmSecuritySolutions
+      repositoryURLs:
+      - https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+      version: 1.0.14

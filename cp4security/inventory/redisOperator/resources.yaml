@@ -1,0 +1,19 @@
+resources:
+  resourceDefs:
+    files:
+      - mediaType: application/vnd.case.resource.script.bash.v1
+        ref: airgap.sh
+      - mediaType: application/vnd.case.resource.script.bash.v1+launcher
+        ref: launch.sh
+      - mediaType: application/vnd.case.resource.k8s.v1+yaml
+        ref: op-olm/catalog_source.yaml
+      - mediaType: application/vnd.case.resource.k8s.v1+yaml
+        ref: op-olm/operator_group.yaml
+      - mediaType: application/vnd.case.resource.k8s.v1+yaml
+        ref: op-olm/subscription.yaml
+    cases:
+      - case: ibm-cloud-databases-redis
+        version: 1.0.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1

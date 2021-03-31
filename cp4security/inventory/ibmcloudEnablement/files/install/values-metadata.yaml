@@ -1,0 +1,114 @@
+### VALUES REQUIRED FROM CUSTOMER
+adminUserId:
+  __metadata:
+    name: "adminUserId"    
+    label: "Cloud Pak for Security Administrator"
+    description: "Cloud Pak for Security Administrator"
+    type: "string"
+    required: true
+storageClass:
+  __metadata:
+    name: "storageClass"    
+    label: "Cloud Pak for Security Default Storage Class"
+    description: "Cloud Pak for Security Default Storage Class"
+    type: "string"
+    required: true
+    default: "ibmc-block-gold"
+domain:
+    __metadata:
+      name: "domain"
+      label: "Cloud Pak for Security Application URL"
+      description: "Cloud Pak for Security Application URL"
+      type: "string"
+      required: false
+cert:
+  __metadata:
+    name: "cert"    
+    label: "Cloud Pak for Security Domain TLS Certificate"
+    description: "Cloud Pak for Security Domain TLS Certificate"
+    type: "string"
+    required: false
+    multiline: true
+    hidden: false
+certKey:
+  __metadata:
+    name: "certKey"
+    label: "Cloud Pak for Security Domain TLS Certificate Key"
+    description: "Cloud Pak for Security Domain TLS Certificate Key"
+    type: "password"
+    required: false
+    multiline: true
+    hidden: false
+customCA:
+  __metadata:
+    name: "customCA"
+    label: "Custom Certificate of Authority (CA) for Non-Trusted Certificate"
+    description: "Custom Certificate of Authority (CA) for Non-Trusted Certificate"
+    type: "string"
+    required: false
+    multiline: true
+    hidden: false
+securityAdvisor:
+  __metadata:
+    name: "securityAdvisor"
+    label: "Deploy Security Advisor"
+    description: "Deploy Security Advisor"
+    type: "string"
+    required: false
+    default: "Disable"    
+    options:
+    - label: Disable
+      value: Disable
+    - label: Enable
+      value: Enable
+backupStorageClass:
+  __metadata:
+    name: "backupStorageClass"
+    label: "Cloud Pak for Security Backup Storage Class"
+    description: "Cloud Pak for Security Backup Storage Class"
+    type: "string"
+    required: false
+    hidden: false
+backupStorageSize:
+  __metadata:
+    name: "backupStorageSize"
+    label: "Cloud Pak for Security Backup Storage Size"
+    description: "Cloud Pak for Security Backup Storage Size"
+    type: "string"
+    required: false
+    default: "100Gi"
+    hidden: false
+imagePullPolicy:
+  __metadata:
+    name: "imagePullPolicy"
+    label: "Cloud Pak for Security Image Pull Policy"
+    description: "Cloud Pak for Security Image Pull Policy"
+    type: "string"
+    required: false
+    default: "Always"    
+    options:
+    - label: IfNotPresent
+      value: IfNotPresent
+    - label: Always
+      value: Always
+defaultAccountName:
+  __metadata:
+    name: "defaultAccountName"
+    label: "Cloud Pak for Security Account Name"
+    description: "Cloud Pak for Security Account Name"
+    type: "string"
+    required: false
+    default: "Cloud Pak For Security"
+OpenshiftAuthentication:
+  __metadata:
+    name: "OpenshiftAuthentication"
+    label: "Enable Openshift IAM Integration"
+    description: "Enable Openshift IAM Integration"
+    type: "string"
+    required: true
+    default: "Enable"
+    options:
+    - label: Enable
+      value: Enable      
+    - label: Disable
+      value: Disable   

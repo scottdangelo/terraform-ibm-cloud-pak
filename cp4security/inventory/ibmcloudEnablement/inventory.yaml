@@ -1,0 +1,27 @@
+inventory:
+  metadata:
+    name: ibmcloudEnablement
+    description: Cloud Pak for Security
+    com_ibm_deployment:
+      target: ibmcloud
+      description: Installation for IBM Cloud
+      type: roks
+      install_kind: bash
+      min_configuration:
+        mem: 32
+        disk: 120
+        cores: 8
+        nodes: 4      
+      single_instance: false
+      pre_install_scope: namespace        
+      source_url: "https://github.com/IBM/charts/tree/master/entitled/ibm-security-foundations-prod"
+      docs_url: "https://cloud.ibm.com/docs/cloud-pak-security?topic=cloud-pak-security-getting-started"
+      launch_url_schema: "https://${domain}"
+      iam_roles:
+        install:
+        - Editor
+        - Administrator
+        pre_install:
+        - Administrator
+        - Manager      
+  k8sScope: cluster

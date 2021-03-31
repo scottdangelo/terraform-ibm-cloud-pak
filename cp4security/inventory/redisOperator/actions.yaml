@@ -1,0 +1,299 @@
+
+actions:
+  actionDefs:
+    installOperator:
+      metadata:
+        name: "installOperator"
+        description: "install the IBM operator for redis"
+        case.launcher.type: "script"
+        case.cli.alias: "install-operator"
+        case.launcher.isdefault: true
+      roles:
+      - clusterAdmin
+      requires:
+        and:
+        - "/case/prereqs/k8sDistros/openshift"
+        - "/case/prereqs/k8sResources/workerIntelLinux"
+        - "/case/prereqs/client/oc"
+      k8sPermissions: &permissions
+        rules:
+        - rule:
+            group: ""
+            resource: deployments
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: deployments/scale
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: events
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: endpoints
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: services
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: configmaps
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: secrets
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: pods
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: pods/exec
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: persistentvolumeclaims
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: namespaces
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: ""
+            resource: persistentvolumes
+            verbs:
+            - get
+            - update
+            - patch
+            - list
+            - watch
+            version: ""
+        - rule:
+            group: apps
+            resource: statefulsets
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: apps
+            resource: replicasets
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: apps
+            resource: deployments
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: apps
+            resource: deployments/scale
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: extensions
+            resource: networkpolicies
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: extensions
+            resource: deployments
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: extensions
+            resource: deployments/scale
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: networking.k8s.io
+            resource: networkpolicies
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: rbac.authorization.k8s.io
+            resource: roles
+            verbs:
+            - get
+            - create
+            - delete
+            - update
+            - list
+            - watch
+            version: ""
+        - rule:
+            group: rbac.authorization.k8s.io
+            resource: rolebindings
+            verbs:
+            - get
+            - create
+            - delete
+            - update
+            - list
+            - watch
+            version: ""
+        - rule:
+            group: ""
+            resource: serviceaccounts
+            verbs:
+            - get
+            - create
+            - delete
+            - update
+            - list
+            - watch
+            version: ""
+        - rule:
+            group: redis.databases.cloud.ibm.com
+            resource: '*'
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: batch
+            resource: cronjobs
+            verbs:
+            - '*'
+            version: ""
+        - rule:
+            group: policy
+            resource: poddisruptionbudgets
+            verbs:
+            - get
+            - create
+            - delete
+            - list
+            - watch
+            version: ""
+        - rule:
+            group: apps
+            resource: deployments/finalizers
+            verbs:
+            - update
+            version: ""
+        - rule:
+            group: security.openshift.io
+            resource: securitycontextconstraints
+            verbs:
+            - use
+            version: ""
+
+    uninstallOperator:
+      metadata :
+        name: "uninstallOperator"
+        description: "uninstall the IBM operator for redis"
+        case.launcher.type: "script"
+        case.cli.alias: "uninstall-operator"
+      roles:
+      - clusterAdmin
+      requires:
+        and:
+        - "/case/prereqs/k8sDistros/openshift"
+        - "/case/prereqs/k8sResources/workerIntelLinux"
+        - "/case/prereqs/client/oc"
+      k8sPermissions: *permissions
+
+
+# actions related to catalog
+    installCatalog:
+      metadata:
+        name: "installCatalog"
+        description: "install the IBM Redis operator catalog"
+        case.launcher.type: "script"
+        case.cli.alias: "install-catalog"
+      roles:
+      - clusterAdmin
+      requires:
+        and:
+        - "/case/prereqs/k8sResources/workerIntelLinux"
+        - "/case/prereqs/k8sDistros/openshift"
+        - "/case/prereqs/client/oc"
+      k8sPermissions:
+        rules: []
+
+    uninstallCatalog:
+      metadata:
+        name: "uninstallCatalog"
+        description: "uninstall the IBM operator catalog"
+        case.launcher.type: "script"
+        case.cli.alias: "uninstall-catalog"
+      roles:
+      - clusterAdmin
+      requires:
+        and:
+        - "/case/prereqs/k8sResources/workerIntelLinux"
+        - "/case/prereqs/k8sDistros/openshift"
+        - "/case/prereqs/client/oc"
+      k8sPermissions:
+        rules: []
+
+# actions related to airgap
+
+    configureCredsAirgap:
+      metadata:
+        name: "configureCredsAirgap"
+        description: "configures login credentails for an image registry"
+        case.launcher.type: "script"
+        case.cli.alias: "configure-creds-airgap"
+      roles:
+      - clusterAdmin
+      k8sPermissions:
+        rules: []
+
+    configureClusterAirgap:
+      metadata:
+        name: "configureClusterAirgap"
+        description: "configures global pullsecret and imagesourcecontentpolicy"
+        case.launcher.type: "script"
+        case.cli.alias: "configure-cluster-airgap"
+      roles:
+      - clusterAdmin
+      requires:
+        and:
+        - "/case/prereqs/k8sResources/workerIntelLinux"
+        - "/case/prereqs/k8sDistros/openshift"
+      k8sPermissions:
+        rules: []
+
+    mirrorImages:
+      metadata:
+        name: "mirrorImages"
+        description: "Mirrors the images to a local registry using oc"
+        case.launcher.type: "script"
+        case.cli.alias: "mirror-images"
+      roles:
+      - clusterAdmin
+      requires: "/case/prereqs/client/oc"
+      k8sPermissions:
+        rules: []

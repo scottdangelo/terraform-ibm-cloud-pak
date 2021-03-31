@@ -1,0 +1,6 @@
+inventory:
+  metadata:
+    name: ibmServiceability
+    description: IBM Cloud Pak for Security - serviceability pod
+  k8sScope: cluster
+  

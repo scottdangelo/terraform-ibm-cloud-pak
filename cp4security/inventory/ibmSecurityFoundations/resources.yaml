@@ -1,0 +1,157 @@
+resources:
+  resourceDefs:
+    containerImages:
+    - digest: sha256:be7a0d57e81145b67db5c42c6a432622a31106d164590072097407c1637c1b60
+      image: cp4s-stolon
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:56853b711255f4a0bc7c44d2158167f03f64ef75a22a0249a9fae4703ec10f61
+      image: busybox
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:044b7f49b18fbeb438503c369965470a0d96557ae5185009cfb9208d111e7600
+      image: isc-helper-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:1e289a7b8d02dcdb55f12fb6fbcc84cfe80f206b4b9ffdcdf3a7093698508d7b
+      image: opencontent-icp-cert-gen-1
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:8d89d6ab405a826feb000da8b467d0f7c7d6596da25cd1c8ce38a78cc8e5a5a4
+      image: opencontent-rabbitmq-config-copy
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:833c34073d72f073f1bbaa92b1453cced2cedfbd686012d9d6dc61cabe099b52
+      image: opencontent-rabbitmq-3
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:2912e25c99a3d081032bf72dac235332fba9aa81ebcf8be90a5df1a8ee71eb9f
+      image: isc-ambassador
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:2166e55d5c6898e2aa25473c4054484edcb418b6f43430ba0fbaec4bfd6c3534
+      image: opencontent-etcd-3
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:18f3bdcc72831e301ef93a20871f8ae014ffb4450ec45897275a87505a6a55ba
+      image: isc-middleware-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:3f8b30847835ad9a9b2e283087c7be5cc138c1aa3bcbcd2fdcbeb1188153e828
+      image: isc-kube-arango-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:410a727229614d624b342d2ade37cc225bebda9f6eb583f299133e37912a6259
+      image: isc-truststore-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:7bfa0faeec1710d0339ab21fafcc2c973fcb1cb8c1991995ea666b7bf2c8109c
+      image: isc-sequence-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:1e3c34404a101563c5b42a031f82dedb0ce8b6362f57147362a390669da8c571
+      image: opencontent-minio-client
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:2b216fda411edc2ed8d4ce8ad1177a3e5330039355cf766183815723a096c942
+      image: isc-minio
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:d3c2d96be07fef207fa97bc68afa647a1113ce807cb275111140efe582987a81
+      image: cp4s-extension
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    - digest: sha256:7b40914624ca85ff1abc28797a7cd7386c4b064392b4167abe88636f685a0119
+      image: isc-entitlements-operator
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        architecture: amd64
+        os: linux
+      registries:
+      - host: cp.icr.io/cp/cp4s/foundations
+      tag: 1.6.0.0-amd64
+    helmCharts:
+    - chart: ibm-security-foundations-prod
+      mediaType: application/vnd.case.resource.helm.chart.v2
+      metadata:
+        displayName: The IBM Security foundations Prod chart is the foundations Operator
+          for the IBM Cloud Pak For Security
+        name: ibmSecurityFoundations
+      repositoryURLs:
+      - https://raw.githubusercontent.com/IBM/charts/master/repo/ibm-helm
+      version: 1.0.14

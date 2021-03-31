@@ -1,0 +1,12 @@
+resources:
+  metadata:
+    name: ibmcloudEnablement
+  resourceDefs:
+    files:
+      - ref: install/validation.sh      
+      - ref: install/install.sh
+      - ref: install/cs.sh
+      - ref: install/csUpgrade.sh
+      - ref: install/uninstall.sh
+      - ref: install/values-metadata.yaml
+      - ref: install/README.md

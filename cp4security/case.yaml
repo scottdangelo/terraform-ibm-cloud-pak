@@ -1,0 +1,34 @@
+
+name: ibm-cp-security
+specVersion: 1.0.2
+version: 1.0.14
+appVersion: "1.6.0-0"
+description: Integrate existing security tools to gain deeper insights into threats and risks, orchestrate actions and automate responses
+displayName: Cloud Pak for Security
+icons:
+- mediaType: text/plain; charset=utf-8
+  url: https://raw.githubusercontent.com/IBM/charts/master/entitled/ibm-security-foundations-prod/ibm_cloud_pak/pak_extensions/logo/IBM-Security-icon.png
+organization: IBM
+webPage: https://www.ibm.com
+supports:
+  architectures:
+    amd64: {}
+  k8sDistros:
+    rhocp3: {}
+catalogs:
+  cloudpak: {}
+  middleware: {}
+  security: {}
+  operators: {}
+classifications:
+  commercial: {}
+certifications:
+  ibmccp: {}
+licenses:
+  licenses:
+    ref: LICENSE-en
+    mediaType: text/plain; charset=utf-8
+    metadata:
+      displayDescription: ""
+      displayName: LICENSE-en
+      name: licenses

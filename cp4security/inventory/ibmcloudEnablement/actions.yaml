@@ -1,0 +1,146 @@
+actions:
+  metadata:
+    name: ibmcloudEnablement
+    description: The actions required to install Cloud Pak for Security 
+  actionDefs:
+    install:
+      metadata:
+        name: "install"
+        description: "Installs Cloud Pak for Security and all its dependencies"
+      roles: 
+      - clusterAdmin
+      requires:
+        metadata:
+          message:
+            onFailure: |
+             Please check the CASE prerequisites to validate client machine has the minimum requirements for cli tools and openshift,kubernetes distros
+        and:
+        - "/case/prereqs/k8sDistros/kubernetes"
+        - "/case/prereqs/k8sDistros/openshift"
+        - "/case/prereqs/client/oc"
+        - "/case/prereqs/client/helm3"
+      k8sPermissions:
+        rules:
+        - rule:
+            group: rbac.authorization.k8s.io
+            resource: clusterroles
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+            version: '*'
+        - rule: 
+            group: apiextensions.k8s.io
+            resource: customresourcedefinitions
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+            version: v1
+        - rule: 
+            group: ""
+            resource: "namespaces"
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+        - rule: 
+            group: "extensions"
+            resource: "networkpolicies"
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+        - rule: 
+            group: ""
+            resource: "serviceaccounts"
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+    uninstall:
+      metadata:
+        name: "uninstall"
+        description: "Uninstalls Cloud Pak for Security and all its dependencies"
+      roles: 
+      - clusterAdmin
+      requires:
+        metadata:
+          message:
+            onFailure: |
+              Please check the CASE prerequisites to validate client machine has the minimum requirements for cli tools and openshift,kubernetes distros
+        and:
+        - "/case/prereqs/k8sDistros/kubernetes"
+        - "/case/prereqs/k8sDistros/openshift"
+        - "/case/prereqs/client/oc"
+      k8sPermissions:
+        rules:
+        - rule:
+            group: rbac.authorization.k8s.io
+            resource: clusterroles
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+            version: '*'
+        - rule: 
+            group: apiextensions.k8s.io
+            resource: customresourcedefinitions
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+            version: v1
+        - rule: 
+            group: ""
+            resource: "namespaces"
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+        - rule: 
+            group: "extensions"
+            resource: "networkpolicies"
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+        - rule: 
+            group: ""
+            resource: "serviceaccounts"
+            verbs:
+            - get
+            - list
+            - watch
+            - create
+            - patch
+            - update
+
+        

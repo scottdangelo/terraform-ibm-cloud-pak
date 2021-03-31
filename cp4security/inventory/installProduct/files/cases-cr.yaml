@@ -1,0 +1,134 @@
+apiVersion: isc.ibm.com/v1
+kind: Cases
+metadata:
+  generation: 1
+  labels:
+    app.kubernetes.io/instance: ibm-isc-cases-prod
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: operator-REPLACE_VERSION
+  name: cases
+  namespace: REPLACE_NAMESPACE
+spec:
+  cases:
+    activemq:
+      image: REPLACE_REPOSITORY/isc-cases-activemq:REPLACE_TAG
+      imagePullPolicy: Always
+      replicas: 1
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1024Mi
+        requests:
+          cpu: 100m
+          memory: 768Mi
+    amq_logging_sidecar:
+      image: REPLACE_REPOSITORY/isc-cases-activemq-logging-sidecar:REPLACE_TAG
+      imagePullPolicy: Always
+      resources:
+        limits:
+          cpu: 200m
+          memory: 200Mi
+        requests:
+          cpu: 10m
+          memory: 100Mi
+    app_manager:
+      image: REPLACE_REPOSITORY/apps-manager:REPLACE_APP_MANAGER_TAG
+      imagePullPolicy: Always
+      replicas: 1
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1024Mi
+        requests:
+          cpu: 50m
+          memory: 128Mi
+    application:
+      image: REPLACE_REPOSITORY/isc-cases-application:REPLACE_TAG
+      imagePullPolicy: Always
+      replicas: 1
+      resources:
+        limits:
+          cpu: 2000m
+          memory: 3584Mi
+        requests:
+          cpu: 250m
+          memory: 3072Mi
+    databaseInit:
+      image: REPLACE_REPOSITORY/isc-cases-database-init:REPLACE_TAG
+      imagePullPolicy: Always
+    databaseUpgrade:
+      image: REPLACE_REPOSITORY/isc-cases-database-upgrade:REPLACE_TAG
+      imagePullPolicy: Always
+    elastic:
+      init_schema: false
+      provision:
+        type: helm
+        healthcheck_condition: yellow
+        master:
+          heap_size: 1024m
+          replicas: 1
+          resources:
+            limits:
+              cpu: 500m
+              memory: 2Gi
+            requests:
+              cpu: 150m
+              memory: 1Gi
+        dynamic_provisioning: "true"
+        storage_class_name: REPLACE_STORAGE
+        storage_size: 20Gi
+    imagePullSecret: ibm-isc-pull-secret
+    logging_sidecars:
+      image: REPLACE_REPOSITORY/isc-cases-logging-sidecar:REPLACE_TAG
+      imagePullPolicy: Always
+      resources:
+        limits:
+          cpu: 200m
+          memory: 200Mi
+        requests:
+          cpu: 10m
+          memory: 100Mi
+    postgres:
+      provision:
+        type: crunchydata
+        crunchydata:
+          crunchy_image_tag: REPLACE_POSTGRES_IMAGE
+          metrics: false
+          primary:
+            resources:
+              limits:
+                cpu: 750m
+                memory: 1Gi
+              requests:
+                cpu: 300m
+                memory: 512Mi
+          backrest:
+            resources:
+              limits:
+                cpu: 500m
+                memory: 200Mi
+              requests:
+                cpu: 20m
+                memory: 48Mi
+          upgrade_pgcluster: true
+          crunchy_version: 4.5.1
+    resutil:
+      image: REPLACE_REPOSITORY/isc-cases-resutil:REPLACE_TAG
+      imagePullPolicy: Always
+      resources:
+        limits:
+          cpu: 200m
+          memory: 200Mi
+        requests:
+          cpu: 10m
+          memory: 10Mi
+    scripting:
+      image: REPLACE_REPOSITORY/isc-cases-scripting:REPLACE_TAG
+      imagePullPolicy: Always
+      resources:
+        limits:
+          cpu: 1000m
+          memory: 1024Mi
+        requests:
+          cpu: 250m
+          memory: 768Mi

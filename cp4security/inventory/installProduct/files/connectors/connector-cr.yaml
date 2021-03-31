@@ -1,0 +1,10 @@
+apiVersion: connector.isc.ibm.com/v1
+kind: Connector
+metadata:
+  name: REPLACE_TYPE-REPLACE_MODULE
+  namespace: REPLACE_NAMESPACE
+spec:
+  type: "REPLACE_SPEC_TYPE"
+  version: "REPLACE_VERSION"
+  creator: "IBM"
+  image: "REPLACE_IMAGE"

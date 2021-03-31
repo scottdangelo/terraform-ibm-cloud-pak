@@ -1,0 +1,170 @@
+actions:
+  actionDefs:
+    setup:
+      metadata :
+          name: "setup"
+          description: "Installs the CouchDB operator"
+      roles:
+        - clusterAdmin
+      requires:
+        and:
+          - "/case/prereqs/k8sDistros/openshift"
+      k8sPermissions:
+        rules:
+          - rule:
+              group: ""
+              resource: deployments
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: deployments/scale
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: events
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: endpoints
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: services
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: secrets
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: pods
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: pods/exec
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: persistentvolumeclaims
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: namespaces
+              verbs:
+                - '*'
+          - rule:
+              group: ""
+              resource: persistentvolumes
+              verbs:
+                - get
+                - update
+                - patch
+                - list
+                - watch
+          - rule:
+              group: "apps"
+              resource: statefulsets
+              verbs:
+                - '*'
+          - rule:
+              group: "apps"
+              resource: replicasets
+              verbs:
+                - '*'
+          - rule:
+              group: "apps"
+              resource: deployments
+              verbs:
+                - '*'
+          - rule:
+              group: "apps"
+              resource: deployments/scale
+              verbs:
+                - '*'
+          - rule:
+              group: "extensions"
+              resource: networkpolicies
+              verbs:
+                - '*'
+          - rule:
+              group: "extensions"
+              resource: deployments
+              verbs:
+                - '*'
+          - rule:
+              group: "extensions"
+              resource: deployments/scale
+              verbs:
+                - '*'
+          - rule:
+              group: "networking.k8s.io"
+              resource: networkpolicies
+              verbs:
+                - '*'
+          - rule:
+              group: "rbac.authorization.k8s.io"
+              resource: roles
+              verbs:
+                - get
+                - create
+                - delete
+                - update
+                - list
+                - watch
+          - rule:
+              group: "rbac.authorization.k8s.io"
+              resource: rolebindings
+              verbs:
+                - get
+                - create
+                - delete
+                - update
+                - list
+                - watch
+          - rule:
+              group: ""
+              resource: serviceaccounts
+              verbs:
+                - get
+                - create
+                - delete
+                - update
+                - list
+                - watch
+
+
+          - rule:
+              group: "batch"
+              resource: cronjobs
+              verbs:
+                - '*'
+          - rule:
+              group: "policy"
+              resource: poddisruptionbudgets
+              verbs:
+                - get
+                - create
+                - delete
+                - list
+                - watch
+          # - rule:
+          #     group: "apps"
+          #     resource: deployments/finalizers
+          #     name: couchdb-operator
+          #     verbs:
+          #       - update
+
+          # - rule:
+          #     group: "couchdb.databases.cloud.ibm.com"
+          #     resource: '*'
+          #     verbs:
+          #       - '*'

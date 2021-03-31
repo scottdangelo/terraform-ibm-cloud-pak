@@ -1,0 +1,53 @@
+actions:
+  metadata:
+    name: ibmSecuritySolutions
+    description: "Installation for IBM Security Solutions"
+  actionDefs:
+    preInstall:
+      metadata:
+        name: preInstall
+        description: "Prerequisites to installing Cloud Pak for Security"
+      roles:
+      - clusterAdmin
+      requires:
+        and:
+          - "/case/prereqs/ibmCoreServices/authIdp"
+          - "/case/prereqs/ibmCoreServices/certManager"
+          - "/case/prereqs/ibmCoreServices/logging"
+          - "/case/prereqs/ibmCoreServices/monitoring"
+          - "/case/prereqs/k8sDistros/kubernetes"
+          - "/case/prereqs/k8sDistros/ibmCloudPrivate"
+          - "/case/prereqs/k8sResources/ibmPrivilegedSCC"
+          - "/case/prereqs/k8sDistros/openshift"
+          - "/case/prereqs/k8sResourceVersions/configmap"
+          - "/case/prereqs/k8sResourceVersions/helm/helmV2"
+          - "/case/prereqs/k8sResourceVersions/monitoringdashboard"
+      k8sPermissions:
+        rules:
+        - rule:
+            group: "*"
+            resource: "*"
+            verbs:
+            - "*"
+
+    install:
+      metadata:
+        name: install
+        description: "Install the IBM Cloud Pak for Security"
+      roles:
+      - namespaceAdmin
+      requires:
+        and:
+          - "/case/prereqs/k8sDistros/ibmCloudPrivate"
+          - "/case/prereqs/k8sResources/ibmPrivilegedSCC"
+          - "/case/prereqs/k8sDistros/openshift"
+          - "/case/prereqs/k8sDistros/kubernetes"
+          - "/case/prereqs/k8sResourceVersions/helm/helmV2"
+          - "/case/prereqs/k8sResourceVersions/helm/helmV3"
+      k8sPermissions:
+        rules:
+        - rule:
+            group: "*"
+            resource: "*"
+            verbs:
+            - "*"

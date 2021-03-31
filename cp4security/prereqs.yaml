@@ -1,0 +1,61 @@
+
+prereqs:
+  prereqDefs:
+    k8sDistros: 
+      kubernetes:
+        distribution: kubernetes
+        semver: ">=1.18.0"                       # Kubernetes Distributions resolver
+      openshift:
+        distribution: openshift
+        semver: ">=1.18.0"
+    client:
+      kubectl:
+        command: "kubectl"
+        versionArgs: "version"
+        versionRegex: "GitVersion:\"v1.1[4-9].[0-9]*"
+      docker:
+        command: "docker"
+        versionArgs: "--version"
+        versionRegex: "Docker version [1-9][0-9].d*.d*"
+      oc:
+        command: "oc"
+        versionArgs: "version --client"
+        versionRegex: "4.[3-9]*.[0-9]*"
+      cloudctl: 
+        command: "cloudctl"
+        versionArgs: "version"
+        versionRegex: "Client Version: v3.[4-9].[0-9]*"
+      helm3: 
+        command: "helm3"
+        versionArgs: "version"
+        versionRegex: "version.BuildInfo{Version:\"v3.[1-9].[1-9]*"
+      helm:
+        command: "helm"
+        versionArgs: "version"
+        versionRegex: "version.BuildInfo{Version:\"v3.[1-9].[1-9]*"
+      podman:
+        command: "podman"
+        versionArgs: "--version"
+        versionRegEx: "version [0-9].([0-9]|[0-8][0-9]|9[0-9])."
+      openssl:
+        command: "openssl"
+        versionArgs: "version"
+        versionRegEx: "[0-9].[0-9].[0-9]"
+    k8sResources:
+      nonrootSCC:
+        Selector: {}
+        apiGroup: security.openshift.io
+        kind: SecurityContextConstraints
+        metadata:
+          description:  Namespace is using the nonroot SecurityContextConstraint
+        name: nonroot
+        version: v1
+      workerIntelLinux:                 # At least one amd64 node
+        kind: node
+        apiGroup: ""
+        version: v1
+        selector:
+          matchExpressions:
+          - {key: beta.kubernetes.io/arch, operator: In, values: [amd64]}
+          - {key: beta.kubernetes.io/os, operator: In, values: [linux]}
+          - {key: node-role.kubernetes.io/worker, operator: Exists}

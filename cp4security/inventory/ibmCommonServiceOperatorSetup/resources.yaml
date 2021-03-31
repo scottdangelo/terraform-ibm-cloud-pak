@@ -1,0 +1,503 @@
+resources:
+  resourceDefs:
+    files:
+    - mediaType: application/vnd.case.resource.script.bash.v1+launcher
+      ref: launch.sh
+    - mediaType: application/vnd.case.resource.script.bash.v1
+      ref: airgap.sh
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: op-olm/operator_group.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: op-olm/subscription.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml
+      ref: op-olm/operand_request.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml  
+      ref: op-olm/online_catalog_source.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml  
+      ref: op-olm/common_service.yaml
+    - mediaType: application/vnd.case.resource.k8s.v1+yaml  
+      ref: op-olm/namespace_scope.yaml
+    containerImages:
+    - image: opencloudio/common-service-operator
+      metadata:
+        name: commonServiceOperator
+        displayName: common-service-operator
+      tag: 3.6.3
+      digest: sha256:68ab7dff37da4f90e478d7a03eb37a675c1f56c508ede5cfbbf1b98a89d41f43
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:0bc62df3f3946b80ba5edbe80914c13088dc9cb7ac65d7976a105480f5d6a628
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 3.6.3-amd64
+        platform:
+          architecture: amd64
+          os: linux
+      - digest: sha256:99816d047dad7a3afedaf1e9ac011496104671bc657f05ddaabb222a5dc6bef5
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 3.6.3-ppc64le
+        platform:
+          architecture: ppc64le
+          os: linux
+      - digest: sha256:0cf4e373f8e47b23221f168a2b6a7652c78fc905136d9621db1582ac7512e771
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 3.6.3-s390x
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-secretshare-operator
+      metadata:
+        name: ibmSecretshareOperator
+        displayName: ibm-secretshare-operator
+      tag: 1.3.1
+      digest: sha256:10cbb2bebfaccfa856c5b5543e30d654f0b07755fa502f6b53e9b1f112beff62
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:e49e390a51178826e6ee185bb0f31fe8f559f044025c5711421523a58d56ab59
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.3.1-amd64
+        platform:
+          architecture: amd64
+          os: linux
+      - digest: sha256:08d404fab237458f45dc88f1912e39b6cf59936288741c97c2ce54e918bb7256
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.3.1-ppc64le
+        platform:
+          architecture: ppc64le
+          os: linux
+      - digest: sha256:c79631066cc542c88805bd644139977e0c529cdd39a9dd301dc23b2e051e9c35
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.3.1-s390x
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-cs-webhook
+      metadata:
+        name: ibmCsWebhook
+        displayName: ibm-cs-webhook
+      tag: 1.2.1
+      digest: sha256:934a44d286d66bcf0de2bd1bedd460a4266016e05fdcf6c84b63eb957cb40ec9
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:469608c7c23f94292b09b5f32ae62b7935608fdde4ec2199833cb41bf2b9d567
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.2.1-amd64
+        platform:
+          architecture: amd64
+          os: linux
+      - digest: sha256:41e4a40274b2dbe97375bb28120db93eaba9fc558c8a813ea617810edc297ca8
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.2.1-ppc64le
+        platform:
+          architecture: ppc64le
+          os: linux
+      - digest: sha256:cd10710a6f64ad032ec0d9c5adca19dcb3c297a3a8e7f39ace8f874b5560b003
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.2.1-s390x
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-namespace-scope-operator
+      metadata:
+        name: ibmNamespaceScopeOperator
+        displayName: ibm-namespace-scope-operator
+      tag: 1.0.1
+      digest: sha256:7aaf007222f1db554677245dbc5521073314c28c99fba385a5785b6b53b99d35
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:6dacdf085a8eba2a291fbb17acb1bfdbef07929c5cc2607f79f7cb81066b8e8b
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.0.1-amd64
+        platform:
+          architecture: amd64
+          os: linux
+      - digest: sha256:f0c7688d34ba4172dd7f45e0d8cf7c58b5015f8e1419fc67f400f839da9c1270
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.0.1-ppc64le
+        platform:
+          architecture: ppc64le
+          os: linux
+      - digest: sha256:bfb1495a4e445b0280b80ea47f16989f7f1c50bdc6fbe845beb8e9b96c313edf
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.0.1-s390x
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-cs-upgrade-to3.4
+      metadata:
+        name: upgradeImage
+        displayName: ibm cs upgrade to 3.4
+      tag: v0.8
+      digest: sha256:b09ea56fb6de9af25d47d3f5197fa6c6e87065c650516dbecbe3198ed1a477b7
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:0ec7a158953f9eb87774eaa9cb9ca2ddb18cd5e7ad8873e7566345b23b593fa5
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: v0.8-amd64
+        platform:
+          architecture: amd64
+          os: linux
+      - digest: sha256:c9f18bfb1a8dbd4f6c09af475b753f1c97612892c47f3273f6fd122b3444bd16
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: v0.8-ppc64le
+        platform:
+          architecture: ppc64le
+          os: linux
+      - digest: sha256:e293328aa877b578b3ada87f2b5d82489b57bed8aff75679a3aca4d3c9ea7e90
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: v0.8-s390x
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: quay.io
+    - image: ibmcom/ibm-common-service-catalog
+      metadata:
+        name: ibmCommonServiceCatalog
+        displayName: ibm-common-service-catalog
+        operators_operatorframework_io:
+          catalog:
+            mediaType: registry+v1
+      tag: v3.6.3-20201210.043250-0D04601CB
+      digest: sha256:001223d5824213051ee51e847dacc791efb23a810bff8620b84645917d0f235f
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:b658899f84ecf0735151d1e52cf27d92c0c2f0e451af27a56ade3a1e1ba94c39
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: v3.6.3-20201210.043250-0D04601CB-linux.amd64
+        platform:
+          architecture: amd64
+          os: linux
+      - digest: sha256:08f75f90597518bfb0b25dd292f61c0327d98d71379af05c34117fb8046c01a4
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: v3.6.3-20201210.043250-0D04601CB-linux.ppc64le
+        platform:
+          architecture: ppc64le
+          os: linux
+      - digest: sha256:ef586826b2b0163b83cc118e312222fdf609d486aca66be63fe912fc097c5509
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: v3.6.3-20201210.043250-0D04601CB-linux.s390x
+        platform:
+          architecture: s390x
+          os: linux
+      registries:
+      - host: docker.io
+    - image: opencloudio/ibm-iam-operator-bundle
+      metadata:
+        name: ibmIamOperatorBundle
+        displayName: ibm-iam-operator-bundle
+      tag: 3.8.2
+      digest: sha256:230f8b20069a408740c7e0af2f510f6e8a4de92aecc2b697d38c55e89a9e5722
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-common-service-operator-bundle
+      metadata:
+        name: ibmCommonServiceOperatorBundle
+        displayName: ibm-common-service-operator-bundle
+      tag: 3.6.3
+      digest: sha256:3c98761ca7d737da783c09fa2b86238c7e584a141f54779f54fbf77c9027c49b
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-commonui-operator-bundle
+      metadata:
+        name: ibmCommonuiOperatorBundle
+        displayName: ibm-commonui-operator-bundle
+      tag: 1.4.1
+      digest: sha256:3defa6f9f665965c59ac83f96b9a93ebfce8c1c410b589eba5d25cba1a66f5f6
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-metering-operator-bundle
+      metadata:
+        name: ibmMeteringOperatorBundle
+        displayName: ibm-metering-operator-bundle
+      tag: 3.8.1
+      digest: sha256:079eba9396f0df33d36c619fd3488a8fee6d7d2dad574e641fa5fa9120572321
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-licensing-operator-bundle
+      metadata:
+        name: ibmLicensingOperatorBundle
+        displayName: ibm-licensing-operator-bundle
+      tag: 1.3.1
+      digest: sha256:dea211d18c004963c890ca9b604ce0295574f1fb6451d50abe5b573ad41faf03
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-elastic-stack-operator-bundle
+      metadata:
+        name: ibmElasticStackOperatorBundle
+        displayName: ibm-elastic-stack-operator-bundle
+      tag: 3.2.5
+      digest: sha256:14df2f751c50d6be2cfe928e2372d7564ec8326505eb5ee6515d53681d763c17
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-mongodb-operator-bundle
+      metadata:
+        name: ibmMongodbOperatorBundle
+        displayName: ibm-mongodb-operator-bundle
+      tag: 1.2.1
+      digest: sha256:04fea89329af68dbb1e51c12e303ae355a1b78e432cd52eb2603f80b482f0998
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-monitoring-grafana-operator-bundle
+      metadata:
+        name: ibmMonitoringGrafanaOperatorBundle
+        displayName: ibm-monitoring-grafana-operator-bundle
+      tag: 1.10.4
+      digest: sha256:55d7c203629b3c911ae36509418bc7975d0bc1daf3d4335fd31732e9bccbca21
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/operand-deployment-lifecycle-manager-bundle
+      metadata:
+        name: operandDeploymentLifecycleManagerBundle
+        displayName: operand-deployment-lifecycle-manager-bundle
+      tag: 1.4.2
+      digest: sha256:b291f1eb17c045901d109e67507e39fd1d77a2fd81c52cc1e27c805a99553a07
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/odlm
+      metadata:
+        name: odlm
+        displayName: odlm
+      tag: 1.4.2
+      digest: sha256:aa9f3505865b0b995346d244c688809251d6dd4b325ab44db856907ad54cf910
+      mediaType: application/vnd.docker.distribution.manifest.list.v2
+      manifests:
+      - digest: sha256:29c2e7717ab40388ad6275a76e718efdd80dc7193e4d58b82d179c71b86b1185
+        mediaType: application/vnd.docker.distribution.manifest.v2
+        tag: 1.4.2-amd64
+        platform:
+          os: linux
+          architecture: amd64
+      registries:
+      - host: quay.io  
+    - image: opencloudio/ibm-platform-api-operator-bundle
+      metadata:
+        name: ibmPlatformApiOperatorBundle
+        displayName: ibm-platform-api-operator-bundle
+      tag: 3.8.1
+      digest: sha256:4916de8c4c58f506b53be7783e6d13e3426bd006f6d9d237c5982b61530b6013
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-ingress-nginx-operator-bundle
+      metadata:
+        name: ibmIngressNginxOperatorBundle
+        displayName: ibm-ingress-nginx-operator-bundle
+      tag: 1.4.1
+      digest: sha256:3d9343ea090fd9b7305d296e17370f65055f505b3c78784af1972be8409aeeec
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-management-ingress-operator-bundle
+      metadata:
+        name: ibmManagementIngressOperatorBundle
+        displayName: ibm-management-ingress-operator-bundle
+      tag: 1.4.3
+      digest: sha256:42321ae83900c9b40cd4ab440e6746d11ce71480d5a3711df0f86e8ae04c9788
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-cert-manager-operator-bundle
+      metadata:
+        name: ibmCertManagerOperatorBundle
+        displayName: ibm-cert-manager-operator-bundle
+      tag: 3.8.1
+      digest: sha256:e40a9f8d414bb7bd24ae84df5d71aef49437d82cbd6d749addc216b6813c6869
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-auditlogging-operator-bundle
+      metadata:
+        name: ibmAuditloggingOperatorBundle
+        displayName: ibm-auditlogging-operator-bundle
+      tag: 3.8.2
+      digest: sha256:ab68eac2653e5207465286723b98832f99b4773f005df5d7f64a4abf86856c87
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-healthcheck-operator-bundle
+      metadata:
+        name: ibmHealthcheckOperatorBundle
+        displayName: ibm-healthcheck-operator-bundle
+      tag: 3.8.1
+      digest: sha256:8c5c984ee31ed53c14b4e0c71625553452d1384817c8ac8f9bdb72737320755a
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-monitoring-exporters-operator-bundle
+      metadata:
+        name: ibmMonitoringExportersOperatorBundle
+        displayName: ibm-monitoring-exporters-operator-bundle
+      tag: 1.9.5
+      digest: sha256:4abd98ee3b4a6320b08474e8a692487e38ff48c46ac0a85669a7ec0b219c7d36
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-monitoring-prometheus-operator-ext-bundle
+      metadata:
+        name: ibmMonitoringPrometheusOperatorExtBundle
+        displayName: ibm-monitoring-prometheus-operator-ext-bundle
+      tag: 1.9.5
+      digest: sha256:31df975a1ac5cf4410ca8b6d2971c16ca4756b74925f4384cdc2e079bbe85307
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-namespace-scope-operator-bundle
+      metadata:
+        name: ibmNamespaceScopeOperatorBundle
+        displayName: ibm-namespace-scope-operator-bundle
+      tag: 1.0.1
+      digest: sha256:37859d34c2d4fc9896c725a9b11a0e3e959ae3203dd30a7f1a6e7c891b2df7ae
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-namespace-scope-operator-restricted-bundle
+      metadata:
+        name: ibmNamespaceScopeOperatorRestrictedBundle
+        displayName: ibm-namespace-scope-operator-restricted-bundle
+      tag: 1.0.1
+      digest: sha256:c72402811ab0b75e11c041d58d0314b844d0e6b0c97d87186040cc2248eb9917
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    - image: opencloudio/ibm-events-operator-bundle
+      metadata:
+        name: ibmEventsOperatorBundle
+        displayName: ibm-events-operator-bundle
+      tag: 0.20.2
+      digest: sha256:2ab466a3561c42f1c5c69e171504f4f3ca9a3daab10691cb3430b037be88d920
+      mediaType: application/vnd.docker.distribution.manifest.v2
+      platform:
+        os: linux
+        architecture: amd64
+      registries:
+      - host: quay.io
+    cases:
+      - case: ibm-cert-manager
+        version: 1.2.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-cs-commonui
+        version: 1.4.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-cs-healthcheck
+        version: 1.2.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-cs-iam
+        version: 1.2.2
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-management-ingress
+        version: 1.2.3
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-metering
+        version: 1.2.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-cs-mongodb
+        version: 1.2.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-platform-api-operator
+        version: 1.2.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-cs-monitoring
+        version: 1.2.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-auditlogging
+        version: 1.3.2
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1
+      - case: ibm-licensing
+        version: 1.3.1
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1

@@ -1,0 +1,13 @@
+resources:
+  metadata:
+    name: couchdbOperatorSetup
+  resourceDefs:
+    files:
+    - ref: operator_group.yaml
+      mediaType: application/vnd.case.resource.k8s.v1+yaml
+    cases:
+      - case: ibm-couchdb
+        version: 1.0.8
+        repositoryURLs:
+          - https://raw.githubusercontent.com/IBM/cloud-pak/master/repo/case
+        mediaType: application/vnd.case.core.v1

@@ -1,0 +1,5 @@
+resources:
+  resourceDefs:
+    files: 
+      - mediaType: application/vnd.case.resource.script.bash.v1+launcher
+        ref: ../../installProduct/files/launch.sh

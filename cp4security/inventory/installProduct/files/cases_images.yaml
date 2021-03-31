@@ -1,0 +1,20 @@
+tag: 1.6.0.0-amd64
+cases:
+    operator:
+      image: isc-cases-operator
+    activemq:
+      image: isc-cases-activemq
+    activemqLoggingSidecar:
+      image: isc-cases-activemq-logging-sidecar
+    application:
+      image: isc-cases-application 
+    databaseInit:
+      image: isc-cases-database-init
+    databaseUpgrade:
+      image: isc-cases-database-upgrade
+    loggingSidecar:
+      image: isc-cases-logging-sidecar
+    resutil:
+      image: isc-cases-resutil
+    scripting:
+      image: isc-cases-scripting

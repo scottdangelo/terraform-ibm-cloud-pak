@@ -1,0 +1,6 @@
+inventory:
+  metadata: 
+    name: installProduct
+    displayName: Install cp4s
+    displayDescription: Installs Cloud Pak for Security and dependencies
+  k8sScope: namespace

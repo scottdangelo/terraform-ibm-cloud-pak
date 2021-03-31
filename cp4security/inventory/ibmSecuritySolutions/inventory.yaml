@@ -1,0 +1,6 @@
+
+inventory:
+  metadata:
+    name: ibmSecuritySolutions
+    description: IBM Cloud Pak for Security - Shared Platform Services
+  k8sScope: cluster

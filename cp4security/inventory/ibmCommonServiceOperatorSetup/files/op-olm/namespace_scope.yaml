@@ -1,0 +1,9 @@
+apiVersion: operator.ibm.com/v1
+kind: NamespaceScope
+metadata:
+  name: common-service
+  namespace: ibm-common-services
+spec:
+  namespaceMembers:
+    - ibm-common-services
+    - REPLACE_NAMESPACE
