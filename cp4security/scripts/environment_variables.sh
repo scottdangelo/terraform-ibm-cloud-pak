@@ -1,0 +1,13 @@
+export OCP_URL= # ie: c100-e.au-syd.containers.cloud.ibm.com:30778
+export OCP_TOKEN= # api key used to login with IBM cloud
+export OCP_USERNAME= # username used to login ie: IAM#anthony.fuller@ibm.com
+export OCP_PASSWORD= # password dependent on how you are logging into OCP cluster
+export CLUSTER_PLATFORM= # must be one of the following: ibmcloud, aws, ocp
+export SELF_SIGNED_CERT= # if using a self signed cert enter: true, otherwise enter: false
+export PLATFORM_ADMIN= # name of the initial admin user for CP4S(must exist within LDAP)
+export CP4S_FQDN= # cp4s.example.com
+export ENTITLED_REGISTRY_URL=cp.icr.io
+export ENTITLED_REGISTRY_PASSWORD=
+export ENTITLED_REGISTRY_USERNAME=cp
+export STORAGE_CLASS= # storage class used, ie: ibmc-block-gold
+export LDAP_PASSWORD= # if deploying openldap with this automation, enter password here
