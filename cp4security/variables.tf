@@ -25,7 +25,6 @@ variable "entitled_registry_user_email" {
   description = "Docker email address"
 }
 
-
 locals {
   namespace                = "default"
   entitled_registry        = "cp.icr.io"
