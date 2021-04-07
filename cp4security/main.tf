@@ -25,7 +25,7 @@ resource "null_resource" "install" {
   }
 
   provisioner "local-exec" {
-    command     = "./install_cp4auto.sh"
+    command     = "./install.sh"
     working_dir = "${path.module}/scripts"
 
     environment = {
