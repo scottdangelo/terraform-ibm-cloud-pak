@@ -1,6 +1,6 @@
 variable "enable" {
   default     = true
-  description = "If set to true installs Cloud-Pak for Data on the given cluster"
+  description = "If set to true installs Cloud-Pak for Security on the given cluster"
 }
 
 variable "force" {
@@ -13,7 +13,7 @@ variable "cluster_config_path" {
 }
 
 variable "openshift_version" {
-  default     = "4.5"
+  default     = "4.6.22"
   description = "Openshift version installed in the cluster"
 }
 
@@ -29,7 +29,7 @@ locals {
   namespace                = "default"
   entitled_registry        = "cp.icr.io"
   entitled_registry_user   = "cp"
-  docker_registry          = "cp.icr.io" // Staging: "cp.stg.icr.io/cp/cpd"
+  docker_registry          = "cp.icr.io" // Staging: "cp.stg.icr.io/cp/cps"
   docker_username          = "cp"               // "ekey"
   entitled_registry_key    = chomp(var.entitled_registry_key)
   openshift_version_regex  = regex("(\\d+).(\\d+)(.\\d+)*(_openshift)*", var.openshift_version)

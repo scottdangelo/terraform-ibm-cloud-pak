@@ -5,6 +5,11 @@ locals {
   prereqs                           = file(join("/", [path.module, "files", "prereqs.yaml"])) 
   roles                             = file(join("/", [path.module, "files", "roles.yaml"])) 
   signature                         = file(join("/", [path.module, "files", "signature.yaml"]))
+  operatorgroup                     = file(join("/", [path.module, "couchdboperstorsetup/files", "operator_group.yaml"]))
+  actions                           = file(join("/", [path.module, "couchdboperatorsetup", "actions.yaml"]))
+  inventory                         = file(join("/", [path.module, "couchdboperatorsetup", "inventory.yaml"]))
+  resources                         = file(join("/", [path.module, "couchdboperatorsetup", "resources.yaml"]))
+
 }
 
 resource "null_resource" "install" {
