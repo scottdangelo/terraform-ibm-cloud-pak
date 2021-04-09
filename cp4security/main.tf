@@ -1,8 +1,3 @@
-provider "ibm" {
-  generation = 2
-  region     = var.region
-}
-
 locals {
   case                              = file(join("/", [path.module, "files", "case.yaml"])) 
   digest                            = file(join("/", [path.module, "files", "digest.yaml"])) 
