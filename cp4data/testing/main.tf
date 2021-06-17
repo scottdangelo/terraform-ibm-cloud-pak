@@ -31,10 +31,11 @@ module "cp4data" {
   openshift_version   = var.openshift_version
   cluster_config_path = data.ibm_container_cluster_config.cluster_config.config_file_path
   on_vpc              = var.on_vpc
-  portworx_is_ready   = var.portworx_is_ready // only need if on_vpc = true
+  portworx_is_ready   = var.portworx_is_ready // only need if portworx_installed = true
 
   // Prereqs
   worker_node_flavor = var.worker_node_flavor
+  portworx_installed = var.portworx_installed
 
   // Entitled Registry parameters:
   entitled_registry_key        = var.entitled_registry_key

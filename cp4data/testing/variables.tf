@@ -41,6 +41,10 @@ variable "worker_node_flavor" {
   description = "Flavor used to determine worker node hardware"
 }
 
+variable "portworx_installed" {
+  type        = bool
+}
+
 # variable "cluster_endpoint" {
 #   default     = "not-required"
 #   description = "URL to access the OpenShift cluster"

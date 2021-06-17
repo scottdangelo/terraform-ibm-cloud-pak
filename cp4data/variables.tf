@@ -47,6 +47,11 @@ variable "worker_node_flavor" {
   description = "Flavor used to determine worker node hardware"
 }
 
+variable "portworx_installed" {
+  type        = bool
+  description = "Is portworx installed on the cluster?"
+}
+
 variable "portworx_is_ready" {
   type = any
   default = null

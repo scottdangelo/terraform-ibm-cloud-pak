@@ -4,39 +4,39 @@ locals {
   subscription                      = file(join("/", [path.module, "files", "subscription.yaml"])) 
   operator_group                    = file(join("/", [path.module, "files", "operator-group.yaml"])) 
 
-  on_vpc_ready = var.on_vpc ? var.portworx_is_ready : 1
+  on_vpc_ready = var.on_vpc && var.portworx_installed ? var.portworx_is_ready : 1
 
   storageclass = {
-    "lite"               = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "dv"                 = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "spark"              = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "wkc"                = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "wsl"                = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "wml"                = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "aiopenscale"        = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "cde"                = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "streams"            = var.on_vpc ? "portworx-shared-gp-allow" : "ibmc-file-gold-gid",
-    "dmc"                = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "db2wh"              = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "datagate"           = var.on_vpc ? "portworx-db2-rwx-sc" : "ibmc-file-gold-gid",
-    "big-sql"            = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
-    "rstudio"            = var.on_vpc ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "lite"               = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-vpc-block-10iops-tier",
+    "dv"                 = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "spark"              = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "wkc"                = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "wsl"                = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "wml"                = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "aiopenscale"        = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "cde"                = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "streams"            = var.on_vpc && var.portworx_installed ? "portworx-shared-gp-allow" : "ibmc-file-gold-gid",
+    "dmc"                = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "db2wh"              = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "datagate"           = var.on_vpc && var.portworx_installed ? "portworx-db2-rwx-sc" : "ibmc-file-gold-gid",
+    "big-sql"            = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
+    "rstudio"            = var.on_vpc && var.portworx_installed ? "portworx-shared-gp3" : "ibmc-file-gold-gid",
   }
   override = {
-    "lite"               = var.on_vpc ? "portworx" : "",
-    "dv"                 = var.on_vpc ? "portworx" : "",
-    "spark"              = var.on_vpc ? "portworx" : "",
-    "wkc"                = var.on_vpc ? "portworx" : "",
-    "wsl"                = var.on_vpc ? "portworx" : "",
-    "wml"                = var.on_vpc ? "portworx" : "",
-    "aiopenscale"        = var.on_vpc ? "portworx" : "",
-    "cde"                = var.on_vpc ? "portworx" : "",
-    "streams"            = var.on_vpc ? "portworx" : "",
-    "dmc"                = var.on_vpc ? "portworx" : "",
+    "lite"               = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "dv"                 = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "spark"              = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "wkc"                = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "wsl"                = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "wml"                = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "aiopenscale"        = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "cde"                = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "streams"            = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "dmc"                = var.on_vpc && var.portworx_installed ? "portworx" : "",
     "db2wh"              = "",
-    "datagate"           = var.on_vpc ? "portworx" : "",
-    "big-sql"            = var.on_vpc ? "portworx" : "",
-    "rstudio"            = var.on_vpc ? "portworx" : "",
+    "datagate"           = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "big-sql"            = var.on_vpc && var.portworx_installed ? "portworx" : "",
+    "rstudio"            = var.on_vpc && var.portworx_installed ? "portworx" : "",
   }
 }
 
